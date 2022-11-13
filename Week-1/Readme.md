@@ -12,7 +12,7 @@ Note : Whenever Developer is developing a website, there are certain things that
 
   - Here 'text/html' is a 'MIME Type' which tells the browser that it is an 'HTML document' and 'charset=UTF-8' tells the browser that it is encoded in 'UTF-8 character encoding'. Using this information, 'the browser can convert the binary format into a readable text file'.
 
-    -----Add image r-1----
+<img width="513" alt="r-1" src="https://user-images.githubusercontent.com/65493037/201515345-a653cf22-e2fe-423b-97fb-cd1e281ddd70.png">
 
     - If this header is missing, the browser would not understand how to process the file and it will render in plain text format. But if everything is OK, after this conversion, the browser can start reading the HTML document. A typical HTML document could look like below code this.
 
@@ -35,7 +35,8 @@ Note : Whenever Developer is developing a website, there are certain things that
 
         * In the above Ex-Code, our webpage is dependent on 'style.css' to provide styles to HTML elements and 'main.js' to perform some JavaScript operations. With some neat CSS styles, our above webpage will look like this.
 
-        ---image r-2-----
+        
+<img width="958" alt="r-2" src="https://user-images.githubusercontent.com/65493037/201515364-6ab2f8fd-5828-475f-bdb2-e2f15ee8c3a2.png">
 
     - But the question still stands, how does a browser render this beautiful-looking webpage from a simple HTML file which contains nothing but text? For that, we need to understand what is DOM, CSSOM, and Render Tree?
 
@@ -45,13 +46,15 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - Since every HTML element has different properties, the Node object will be created from different classes (constructor functions). For example, the Node object for the div element is created from HTMLDivElement which inherits Node class. For our earlier HTML document, we can visualize these nodes using a simple test as below.
 
-    ---image r-3-----
+    <img width="516" alt="r-3" src="https://user-images.githubusercontent.com/65493037/201515381-3f743d94-c497-4073-ba74-87c48b0d2a7c.png">
+
 
     - The browser comes with built-in classes like HTMLDivElement, HTMLScriptElement, Node etc.
 
     - After the browser has created Nodes from the HTML document, it has to create a tree-like structure of these node objects. Since our HTML elements in the HTML file are nested inside each other, the browser needs to replicate that but using Node objects it has previously created. This will help the browser efficiently render and manage the webpage throughout its lifecycle.
 
-    ---image r- 4-----
+    
+<img width="518" alt="r-4" src="https://user-images.githubusercontent.com/65493037/201515391-0e10f46c-7422-4f0e-a26b-241af5cf5c57.png">
 
     - A DOM tree for our earlier HTML document looks like above. A DOM tree starts from the topmost element which is html element and branches out as per the occurrence and nesting of HTML elements in the document. Whenever an HTML element is found, it creates a DOM node (Node) object from its respective class (constructor function).
 
@@ -59,7 +62,8 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - You can visualize the DOM tree in Google Chrome DevTools Console as shown below. This will show you the hierarchy of DOM elements (a high-level view of DOM tree) with properties of each DOM element.
 
-    ---image r- 5-----
+    
+<img width="469" alt="r-5" src="https://user-images.githubusercontent.com/65493037/201515401-3df6e4d7-3447-45f3-a69d-5199b5fd4fe2.png">
 
     - JavaScript doesn’t understand what DOM is, it is not part of the 'JavaScript specifications'. DOM is a high-level 'Web API' provided by the browser to efficiently render a webpage and expose it publically for the developer to dynamically manipulate DOM elements for various purposes.
 
@@ -112,7 +116,8 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - We can visualize the CSSOM tree for our earlier example using the below diagram. For the sake of simplicity, we are going to ignore the user-agent styles and focus on CSS styles mentioned earlier.
 
-    ---image r-6 -----
+    <img width="470" alt="r-6" src="https://user-images.githubusercontent.com/65493037/201515421-2d1062c5-4b30-4a22-a6c8-47857a5ad2dd.png">
+
 
     - As you can see from the above diagram, our CSSOM tree does not contain elements which do not get printed on the screen like <link>, <title>, <script> etc. CSS property values in the red colors are cascaded down from the top while property values in the gray are overriding the inherited values.
 
@@ -122,7 +127,8 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - As Render-Tree is a low-level representation of what will eventually get printed on the screen, it won’t contain nodes that do not hold any area in the pixel matrix. For example, display:none; elements have dimensions of 0px X 0px, hence they won’t be present in Render-Tree.
 
-    ---image r-7 -----
+    <img width="722" alt="r-7" src="https://user-images.githubusercontent.com/65493037/201515428-02dc1943-f99b-47be-8b82-2144eb3770a7.png">
+
 
     - As you can see from the above diagram, Render-Tree combines DOM and CSSOM to generate a tree-like structure containing only the elements which will be printed on the screen.
 
@@ -168,7 +174,9 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - From the above information, we can construct a sequence of events the browser goes through from a web page to render things on the screen from as simple as HTML and CSS text content.
 
-    ---image r-8 -----
+   <img width="523" alt="r-8" src="https://user-images.githubusercontent.com/65493037/201515435-e365ce5e-c2b1-42cc-b604-3c417f255eec.png">
+
+    
 
     - This sequence of events is also called the 'critical rendering path'.
 
@@ -196,15 +204,18 @@ Note : Whenever Developer is developing a website, there are certain things that
 
     - Most browsers provide the DOMParser Web API to construct a DOM tree from the HTML code. An instance of DOMParser class represents a DOM parser and using the parseFromString prototype method, we can parse raw HTML text (code) into a DOM tree (as shown below).
 
-    ---image r-9 -----
+    
+<img width="517" alt="r-9" src="https://user-images.githubusercontent.com/65493037/201515450-bdc31b9e-0c64-409b-8f71-5ac4bd50e3e6.png">
 
     - When the browser request for a webpage and server responds with some HTML text (with Content-Type header set to text/html), a browser may start parsing the HTML as soon as a few characters or lines of the entire document are available. Hence the browser can build the DOM tree incrementally, one node at a time. The browser parses HTML from top to bottom and not anywhere in the middle since the HTML represents a nested tree-like structure.
 
-    ---image r-10 -----
+    
+<img width="522" alt="r-10" src="https://user-images.githubusercontent.com/65493037/201515473-c48a068a-4d47-4fec-91f1-4572a36a0218.png">
 
     - In the above example, we have accessed the incremental.html file from our Node server and set the network speed to only 10kbps (from the Network panel). Since it will take a long time for the browser to load (download) this file (as it contains 1000 h1 elements), the browser constructs a DOM tree from the first few bytes and prints them on the screen (as it downloads the remaining content of the HTML file in the background).
 
-    ---image r-11 -----
+    <img width="530" alt="r-11" src="https://user-images.githubusercontent.com/65493037/201515485-fd2eb65b-ec33-4201-acdc-11d311718142.png">
+
 
     - If you have a look at the Performance chart of the above request, you will be able to see some events in the Timing row. These events are commonly known as performance metrics. When these events are placed as close as possible to each other and happen as early as possible, better the user experience.
 
