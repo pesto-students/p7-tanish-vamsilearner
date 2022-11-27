@@ -12,7 +12,7 @@ function log() {
 }
 return [increment, log];  
 }
-const [increment,log] = createIncrement(); // here createIncrement executes first, so "count is '0'" after that when we call the inside lines of code executes
+const [increment,log] = createIncrement(); // here createIncrement executes first, so "count is '0'" after that when we call functions
                                             // but functions inside the createIncrement function will executes when we call with its name.
 
 increment(); //increments the count then this function calls
