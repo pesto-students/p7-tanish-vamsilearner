@@ -23,7 +23,6 @@ class CustomPromise {  // CustomPromise
     this.rejector = this.rejector.bind(this);
     this.thenFn = null;
     this.catchFn = null;
-    fn(this.resolver, this.rejector);
   }
   resolver(resolvedData) { // then resolved 
     if (this.CustomPromiseState === CustomPromiseState.PENDING) {
@@ -54,7 +53,7 @@ const getnumber = () =>  // function to perform division
       if (randomNumber % 5 === 0) {
         rej(`Rejected with num: ${randomNumber}`);
       }
-      rej(`Rejected with num: ${randomNumber}`);
+      res(`Resolved with num: ${randomNumber}`);
     }, randomNumber * 10);
   });
 
