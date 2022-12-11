@@ -1,0 +1,48 @@
+.container {
+    font-family: sans-serif;
+}
+
+img {
+    height: 400px;
+    width: 400px;
+}
+
+.articles {
+    display: grid;
+    margin-left: 20px;
+}
+
+.formHeaders {
+    display: flex;
+    margin-top: 25px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+a[target] {
+    color: purple;
+}
+
+.media {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .media {
+        display: grid;
+    }
+}
+
+.footer {
+    background-color: #0d54a1;
+    padding: 5px;
+    color: white;
+    margin-top: 10%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

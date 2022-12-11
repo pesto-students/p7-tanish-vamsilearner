@@ -1,0 +1,85 @@
+html,
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+label {
+    font-size: 30px;
+}
+
+.box1 {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: #00136c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.box2 {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    color: #00136c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.box3 {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    color: #00136c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.box4 {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    color: #00136c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.container:hover .box1 {
+    rotate: 90deg;
+    margin-right: 100px;
+}
+
+.container:hover .box2 {
+    rotate: -90deg;
+    margin-left: 100px;
+}
+
+.container:hover .box3 {
+    rotate: 100grad;
+    margin-right: 100px;
+}
+
+.container:hover .box4 {
+    rotate: -0.25turn;
+    margin-left: 100px;
+}
