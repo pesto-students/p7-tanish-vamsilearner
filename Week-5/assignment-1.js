@@ -1,17 +1,15 @@
-// generator 
-async function* foo() {  // generateor fn (*)
-    yield await Promise.resolve('a');  // yields (returns the value when promise resolved)
-    yield await Promise.resolve('b');
-    yield await Promise.resolve('c');
-  }
-  let str = ''; //declaring variable
-  async function generate() {  // fn
-    for await (const val of foo()) { // loop 
-      str = str + val;
-    }
-    console.log(str);
+const foo = function*() { // generator fn
+  yield 'a';  // yield returns the values
+  yield 'b';
+  yield 'c';
+};
+
+let str = '';
+for (const val of foo()) { // loop
+  str = str + val;
 }
-generate();     // calling fn
+
+console.log(str);
 
 // async 
 function resolveAfter2Seconds() {  // fn
