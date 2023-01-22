@@ -22,4 +22,4 @@ function spiralOrder(matrix) {
 }
 
 console.log(spiralOrder([ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ]));
-// time and space complexity O(n)
+// time o(n^2)and space complexity O(n)
