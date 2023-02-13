@@ -1,4 +1,5 @@
 Assignment -1- todolist - https://thunderous-llama-d7f250.netlify.app/
+Assignment-2- Shortend url - https://cool-kashata-5f81c3.netlify.app/
 
 # Getting Started with Create React App
 
