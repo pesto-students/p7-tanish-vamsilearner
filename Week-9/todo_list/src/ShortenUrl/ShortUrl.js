@@ -4,30 +4,41 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 
 const ShortUrl = () => {
-  const [shortenedLink, setShortenedLink] = useState(""); // states
+  const [shortenedLink, setShortenedLink] = useState("");
   const [userInput, setUserInput] = useState("");
 
-
-  // on submit url calls this function
   const fetchData = async () => {
     try {
       const response = await axios(
-        `https://api.shrtco.de/v2/shorten?url=${userInput}`  // query params sending
+        `https://api.shrtco.de/v2/shorten?url=${userInput}`
       );
-      setShortenedLink(response.data.result.full_short_link);
+      if (response.data.ok) {
+        setShortenedLink(response.data.result.full_short_link);
+      }
     } catch (e) {
+      alert(e.response.data.error);
+      setShortenedLink(null);
       console.log(e);
     }
   };
 
-  //using the useMemo hook to memoize the result of the fetchData function, which is the shortened URL. The fetchData function is called every time the userInput state changes, and its result is memoized using useMemo
-  const handleCopy = useMemo(() => {
-    return fetchData();
-  }, [userInput]);
+  // The useMemo hook has been used to memoize the submitUrl function. 
+  //This is because submitUrl only needs to be re-computed when the userInput state changes. By memoizing the function, we can avoid unnecessary re-renders of the component.
+  const submitUrl = useMemo(
+    () => {
+      return () => {
+        if (userInput !== "") {
+          fetchData();
+        }
+      };
+    },
+    [userInput]
+  );
+
   return (
     <div>
       <h1>Short-end Url</h1>
-      <div className=" text-center">
+      <div className="text-center">
         <h1>URL Shortener</h1>
         <div>
           <input
@@ -39,13 +50,17 @@ const ShortUrl = () => {
               setUserInput(e.target.value);
             }}
           />
-          { shortenedLink &&
-          <div className=" mt-2">
-            <label className="border mx-2">{shortenedLink}</label>
-            <CopyToClipboard text={shortenedLink}>
-              <Button variant="primary">Copy URL</Button>
-            </CopyToClipboard>
-          </div>}
+          <Button variant="primary" onClick={submitUrl}>
+            Submit URL
+          </Button>
+          {shortenedLink && (
+            <div className="mt-2">
+              <label className="border mx-2">{shortenedLink}</label>
+              <CopyToClipboard text={shortenedLink}>
+                <Button variant="primary">Copy URL</Button>
+              </CopyToClipboard>
+            </div>
+          )}
         </div>
       </div>
     </div>
