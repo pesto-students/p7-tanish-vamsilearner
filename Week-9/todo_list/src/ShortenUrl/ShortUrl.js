@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 const ShortUrl = () => {
   const [shortenedLink, setShortenedLink] = useState(""); // states
   const [userInput, setUserInput] = useState("");
+
 
   // on submit url calls this function
   const fetchData = async () => {
@@ -19,6 +20,10 @@ const ShortUrl = () => {
     }
   };
 
+  //using the useMemo hook to memoize the result of the fetchData function, which is the shortened URL. The fetchData function is called every time the userInput state changes, and its result is memoized using useMemo
+  const handleCopy = useMemo(() => {
+    return fetchData();
+  }, [userInput]);
   return (
     <div>
       <h1>Short-end Url</h1>
@@ -34,20 +39,13 @@ const ShortUrl = () => {
               setUserInput(e.target.value);
             }}
           />
-          <Button
-            variant="primary"
-            onClick={() => {
-              fetchData();
-            }}
-          >
-            Submit URL
-          </Button>
+          { shortenedLink &&
           <div className=" mt-2">
             <label className="border mx-2">{shortenedLink}</label>
             <CopyToClipboard text={shortenedLink}>
               <Button variant="primary">Copy URL</Button>
             </CopyToClipboard>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
