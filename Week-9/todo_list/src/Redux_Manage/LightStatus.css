@@ -1,0 +1,30 @@
+html,
+body,
+#root,
+.room {
+  height: 100%;
+  margin: 0;
+}
+
+.room {
+  margin: 40px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.lit {
+  background-color: white;
+  color: black;
+  height: 20vh;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+  height: 20vh;
+
+}
+
