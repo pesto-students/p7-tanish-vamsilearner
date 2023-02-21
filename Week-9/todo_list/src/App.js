@@ -2,8 +2,8 @@ import "./App.css";
 
 import Todo from "./Todo/Todo";
 import ShortUrl from "./ShortenUrl/ShortUrl";
-import Counter from "./Redux_Manage/Actions";
-import LightStatus from "./Redux_Manage/LightStatus";
+import Counter from "./Counter/StepsCounter.js";
+import LightStatus from "./LightStatus/LightStatus";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 

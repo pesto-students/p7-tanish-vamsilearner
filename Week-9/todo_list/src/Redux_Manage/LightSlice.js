@@ -6,17 +6,17 @@ const lightSlice = createSlice({
     value: '',
   },
   reducers: {
-    increment: state => {
+    lighton: state => {
       state.value = "ON";
     },
-    reset: state => {
+    lightoff: state => {
       state.value = "OFF" ;
     },
   },
 });
 
-export const { increment, reset } = lightSlice.actions;
+export const { lighton, lightoff } = lightSlice.actions;
 
-export const kk = state => state.light.value;
+export const roomState = state => state.light.value;
 
 export default lightSlice.reducer;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { reset, increment, selectCount } from './Slice';
-// import { increment, decrement, selectCount } from './Slice';
+import { reset, increment, selectCount } from '../Redux_Manage/Slice';
 
 function Counter() {
   const dispatch = useDispatch();
