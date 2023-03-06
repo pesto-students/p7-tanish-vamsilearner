@@ -6,6 +6,7 @@ import Counter from "./Counter/StepsCounter.js";
 import LightStatus from "./LightStatus/LightStatus";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import Test from './Test';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
         <Tab eventKey="Step" title="Add a Step(Redux)" >
         <label>Assignment-3.2</label>
           <Counter />
+          
+        </Tab>
+        <Tab eventKey="tets" title="test">
+        <Test />
         </Tab>
       </Tabs>
     </div>
