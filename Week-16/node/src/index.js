@@ -18,10 +18,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-app.post('/hi', (req, res) => {
-  res.send('hi');
-});
-app.post('', (req, res) => {
-  res.send('.body');
-});
