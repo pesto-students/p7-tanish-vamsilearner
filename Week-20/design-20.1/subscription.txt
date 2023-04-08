@@ -1,0 +1,26 @@
+Subscription-based sports website:
+a. Requirement clarification:
+
+The website should allow users to subscribe to access live scores, game status, and history of any game.
+Users should be able to view the latest scores, upcoming games, and results of past games.
+The website should be updated in real-time to provide accurate information to users.
+b. Capacity and Constraints:
+
+The website should be able to handle a large number of concurrent users.
+The website should be able to scale up or down depending on the number of users.
+The website should be highly available and have low downtime.
+c. System API:
+
+The website should have a RESTful API that allows other applications to access the data.
+The API should be secure and only allow authorized access.
+d. Database Design:
+
+A relational database such as MySQL or PostgreSQL can be used to store the information about the games, scores, and users.
+The database should be optimized for high performance and scalability.
+e. Basic Algorithm or Data Structure:
+
+A search algorithm can be used to efficiently search for games and scores.
+A real-time update system can be implemented to keep the scores and game status up to date.
+f. High-level block diagram:
+
+[Web server] <-> [API] <-> [Database] <-> [Data Feeds (Live Scores, Game Status, History)]

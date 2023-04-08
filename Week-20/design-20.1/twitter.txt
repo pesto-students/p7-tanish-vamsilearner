@@ -1,0 +1,26 @@
+Twitter application:
+a. Requirement clarification:
+
+The Twitter application should allow users to tweet and view their own tweets and the tweets of other users.
+The application should have a timeline feature that displays the home timeline, user timeline, and search timeline.
+Users should be able to see trending hashtags and topics.
+b. Capacity and Constraints:
+
+The application should be able to handle a large number of concurrent users.
+The application should be able to scale up or down depending on the number of users.
+The application should be highly available and have low downtime.
+c. System API:
+
+The Twitter application should have a RESTful API that allows other applications to access the data.
+The API should be secure and only allow authorized access.
+d. Database Design:
+
+A relational database such as MySQL or PostgreSQL can be used to store the information about the users and tweets.
+The database should be optimized for high performance and scalability.
+e. Basic Algorithm or Data Structure:
+
+A search algorithm can be used to efficiently search for tweets and users.
+A real-time update system can be implemented to keep the tweets and user information up to date.
+f. High-level block diagram:
+
+[Web server] <-> [API] <-> [Database] <-> [User Input (Tweets)]
