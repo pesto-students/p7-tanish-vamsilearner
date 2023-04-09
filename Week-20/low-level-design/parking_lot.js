@@ -1,8 +1,14 @@
+// Define the ParkingLot class
 class ParkingLot {
+    // Constructor takes the capacity of the parking lot as an argument
     constructor(capacity) {
+        // Set the capacity of the parking lot
         this.capacity = capacity;
+        // Initialize an array of slots with the given capacity, filled with null
         this.slots = new Array(capacity).fill(null);
+        // Initialize a map to store registration numbers and their corresponding slots
         this.registrationMap = new Map();
+        // Initialize a map to store colors and an array of slots with cars of that color
         this.colorMap = new Map();
     }
 
@@ -89,72 +95,5 @@ class ParkingLot {
     }
 }
 
-// Interactive Command Prompt
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-let parkingLot = null;
-
-rl.on('line', line => {
-    let input = line.trim().split(/\s+/);
-    let command = input.shift();
-    executeCommand(command, input);
-});
-
-// File Input
-const fs = require('fs');
-const file = process.argv[2];
-
-if (file) {
-    fs.readFile(file, 'utf8', (err, data) => {
-        if (err) throw err;
-        let lines = data.split('\n');
-        lines.forEach(line => {
-            let input = line.trim().split(/\s+/);
-            let command = input.shift();
-            executeCommand(command, input);
-        });
-    });
-}
-
-function executeCommand(command, args) {
-    switch (command) {
-        case 'create_parking_lot':
-            parkingLot = new ParkingLot(args[0]);
-            console.log(`Created a parking lot with ${args[0]} slots`);
-            break;
-        case 'park':
-            parkingLot.park(args[0], args[1]);
-            break;
-        case 'leave':
-            parkingLot.leave(args[0]);
-            break;
-        case 'status':
-            parkingLot.status();
-            break;
-        case 'registration_numbers_for_cars_with_colour':
-            parkingLot.registrationNumbersForCarsWithColor(args[0]);
-            break;
-        case 'slot_number_for_registration_number':
-            parkingLot.slotNumberForRegistrationNumber(args[0]);
-            break;
-        case 'slot_numbers_for_cars_with_colour':
-            parkingLot.slotNumbersForCarsWithColor(args[0]);
-            break;
-        default:
-            console.log('Invalid Command');
-            break;
-    }
-}
-
-// commands to check the status of the parking lot
-// create_parking_lot 5
-// park KA-01-HH-1234 White
-// park KA-01-HH-9999 White
-// status
-// leave 1
-// status
-
+// Export the ParkingLot class so it can be used in other files
+module.exports = ParkingLot;
