@@ -8,7 +8,10 @@ import LightStatus from "./LightStatus/LightStatus";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Test from "./Test";
+import ReactGA from "react-ga";
 
+const TRACKING_ID = "UA-244881057-1";
+ReactGA.initialize(TRACKING_ID);
 function App() {
   return (
     <div className="App">
@@ -52,4 +55,4 @@ function App() {
 
 // export default App;
 
-export default Sentry.withProfiler(App);
+export default Sentry.withProfiler(App); // Sentry For react

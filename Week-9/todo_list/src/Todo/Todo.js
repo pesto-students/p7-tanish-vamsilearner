@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ReactGA from "react-ga";
 
 function ToDo() {
   // states
@@ -8,8 +9,16 @@ function ToDo() {
 
   console.log(task,store, completedTaskCount, "check");
 
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
   // add task fun
   const addTodo = () => {
+    ReactGA.event({
+      category: "Task",
+      action: "Add Task",
+    })
     const id = store.length + 1;
     setStore((prev) => [
       ...prev,
